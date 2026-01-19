@@ -10,6 +10,7 @@ class Circle {
       this.size = 5;
       this.segments = 12;
       this.outlined = 0;
+      this.angle = 0;
    }
 
    draw() {
