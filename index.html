@@ -2,12 +2,38 @@
 <html>
 <head>
    <meta charset="utf-8" />
-   <title> Assignment 1: Derek Simpson. dejsimps@ucsc.edu</title>
+   <title>Assignemnt 1: Derek Simpson dejsimps@ucsc.edu</title>
+   <style>
+      body {
+         display: flex;
+         gap: 20px;
+         padding: 20px;
+         font-family: Arial, sans-serif;
+      }
+      #leftContainer {
+         flex: 1;
+      }
+      #rightContainer {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+      }
+      #referenceImage {
+         display: block;
+         width: 400px;
+         height: auto;
+         border: 2px solid #666;
+         border-radius: 5px;
+      }
+   </style>
 </head>
 
 <body onload="main()">
    <!-- Create a canvas (400x400) Note: size and origin -->
-   <canvas id="asg1" width="400" height="400" style="border:1px solid #000000;">
+   <div id="leftContainer">
+      <!-- Create a canvas (400x400) Note: size and origin -->
+      <canvas id="asg1" width="400" height="400" style="border:1px solid #000000;">
       Please use a browser that supports "canvas"
    </canvas>
 
@@ -27,6 +53,7 @@
    <button type="button" id ="ocircle">Circle Outline</button>
    <br>
    <button type="button" id ="drawPicture">Draw Picture</button>
+   <button type="button" id ="alignToggle">Align Stroke: Off</button>
    <br><br>
    <!-- Shape Color -->
    <label for="red">Red</label>
@@ -41,6 +68,13 @@
    <input type="range" id="size" name="size" min="1" max="10" class = "slider">
    <label for="sCount">(Circle) Segment Count: </label>
    <input type="range" id="sCount" name="sCount" min="1.5" max="12" value="12" class = "slider">
+         <br><br>
+      </div>
+
+      <div id="rightContainer">
+         <h3>Reference Drawing</h3>
+         <img id="referenceImage" src="./Picture.jpg" alt="Reference drawing for the picture mode">
+      </div>
    <br><br>
 
    <!-- javascript files containing functions for WebGL -->
@@ -54,6 +88,7 @@
    <script type=text/javascript src="Point.js"></script>
    <script type=text/javascript src="Circle.js"></script>
    <script type=text/javascript src="Picture.js"></script>
+      <script type=text/javascript src="AwesomeScene.js"></script>
    <script type=text/javascript src="asg1.js"></script>
 
 </body>
